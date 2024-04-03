@@ -1,5 +1,6 @@
 { lib
 , stdenv
+, makeWrapper
 , fetchFromGitLab
 , fetchFromGitHub
 , ninja
@@ -126,12 +127,21 @@ stdenv.mkDerivation {
   '';
 
   installPhase = ''
+    runHook preInstall
+
     mkdir -p $out/bin $out/lib
     install -Dm755 -t $out/bin ${extra_build_targets} 
-    install -Dm644 -t $out/lib *.so
+    install -Dm750 -t $out/lib *.so
+
+    runHook postInstall
+  '';
+
+  postFixup = ''
+    wrapProgram $out/bin/oairu --prefix LD_LIBRARY_PATH : "$out/lib"
   '';
 
   nativeBuildInputs = [
+    makeWrapper
     ninja
     cmake
     asn1c
