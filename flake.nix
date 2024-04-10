@@ -21,6 +21,7 @@
           in
           {
             oai-ran = pkgs.callPackage pkgs/openairinterface5g { };
+            srsran5g = pkgs.callPackage pkgs/srsran5g { };
           }
         );
     };
