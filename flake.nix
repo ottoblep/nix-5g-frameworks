@@ -12,6 +12,8 @@
       nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; });
     in
     {
+      nixosModules.gtp5g = import ./modules/gtp5g;
+
       packages = forAllSystems
         (system:
           let
@@ -19,7 +21,6 @@
           in
           {
             oai-ran = pkgs.callPackage pkgs/openairinterface5g { };
-            gtp5g = pkgs.callPackage pkgs/gtp5g { };
           }
         );
     };
