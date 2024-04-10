@@ -1,3 +1,3 @@
-# nix-openairinterface5g
+# nix-5g-frameworks
 
-Nix Packages for the [OpenAirInterface](https://openairinterface.org/)
+Unofficial nix packages for various 5G software frameworks and tools
