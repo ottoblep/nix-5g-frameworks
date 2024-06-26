@@ -2,7 +2,7 @@
   description = "Nix Flake for 5G system emulation frameworks";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
   };
 
   outputs = { self, nixpkgs, ... }:
