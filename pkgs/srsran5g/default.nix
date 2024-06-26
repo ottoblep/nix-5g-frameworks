@@ -54,7 +54,7 @@ gcc11Stdenv.mkDerivation rec {
   meta = with lib; {
     homepage = "https://www.srslte.com/";
     description = "Open-source 4G and 5G software radio suite.";
-    license = licenses.agpl3;
+    license = licenses.gpl3;
     platforms = with platforms; linux ;
     maintainers = with maintainers; [ hexagonal-sun ];
   };

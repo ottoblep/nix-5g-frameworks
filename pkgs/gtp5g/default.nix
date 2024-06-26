@@ -1,13 +1,13 @@
 { stdenv, lib, fetchFromGitHub, kernel, kmod }:
 stdenv.mkDerivation rec {
   name = "gtp5g-${version}-${kernel.version}";
-  version = "0.8.7";
+  version = "0.9.0";
 
   src = fetchFromGitHub {
     owner = "free5gc";
     repo = "gtp5g";
     rev = "v${version}";
-    sha256 = "sha256-G2uvWzcmIf9KJN6hR8aLOhT+Xl04/q39WRgHaBfHtOs=";
+    sha256 = "sha256-xSldmXiIeyPE5WYM+R41DoZWWsb0JErZ38nRQawtBdo=";
   };
 
   # sourceRoot = "source/linux/gtp5g";
